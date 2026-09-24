@@ -15,6 +15,10 @@
 
     <modules>
         <module>01-react-foundations</module>
+        <module>02-tools-and-memory</module>
+        <module>03-stateful-agent-graphs</module>
+        <module>04-multi-agent-orchestration</module>
+        <module>05-enterprise-production</module>
     </modules>
 
     <properties>

@@ -12,22 +12,29 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>01-react-foundations</artifactId>
-    <name>Module 01 - ReAct Foundations &amp; Tool Calling Engine</name>
-    <description>Core implementation of the Reason+Act autonomous loop, dynamic tool reflection, JSON schema generation, and LangChain4j Gemini integration.</description>
+    <artifactId>04-multi-agent-orchestration</artifactId>
+    <name>Module 04 - Multi-Agent Orchestration, Debate &amp; MCP</name>
+    <description>Enterprise multi-agent architectures (Supervisor/Worker Squad, Collaborative Debate, and Model Context Protocol).</description>
 
     <dependencies>
-        <!-- LangChain4j Core & Gemini Provider -->
+        <!-- Preceding Modules -->
         <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j</artifactId>
+            <groupId>com.agentic.ai</groupId>
+            <artifactId>01-react-foundations</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-google-ai-gemini</artifactId>
+            <groupId>com.agentic.ai</groupId>
+            <artifactId>02-tools-and-memory</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.agentic.ai</groupId>
+            <artifactId>03-stateful-agent-graphs</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
-        <!-- Jackson for JSON parsing & Schema serialization -->
+        <!-- Jackson for JSON-RPC MCP serialization -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -55,16 +62,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <mainClass>com.agentic.ai.AgentRunner</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

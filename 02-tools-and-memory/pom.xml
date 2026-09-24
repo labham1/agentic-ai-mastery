@@ -12,11 +12,18 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>01-react-foundations</artifactId>
-    <name>Module 01 - ReAct Foundations &amp; Tool Calling Engine</name>
-    <description>Core implementation of the Reason+Act autonomous loop, dynamic tool reflection, JSON schema generation, and LangChain4j Gemini integration.</description>
+    <artifactId>02-tools-and-memory</artifactId>
+    <name>Module 02 - Tools, Context Windows &amp; Memory Architectures</name>
+    <description>Enterprise memory management (Sliding Window, Summary Buffer, In-Memory Vector RAG) and Dynamic Tool Retrieval using semantic embeddings.</description>
 
     <dependencies>
+        <!-- Module 01 for Tool annotations & core types -->
+        <dependency>
+            <groupId>com.agentic.ai</groupId>
+            <artifactId>01-react-foundations</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- LangChain4j Core & Gemini Provider -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
@@ -27,7 +34,7 @@
             <artifactId>langchain4j-google-ai-gemini</artifactId>
         </dependency>
 
-        <!-- Jackson for JSON parsing & Schema serialization -->
+        <!-- Jackson for JSON parsing -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -55,16 +62,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <mainClass>com.agentic.ai.AgentRunner</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
